@@ -10,9 +10,9 @@ class CreateCharacters < ActiveRecord::Migration[7.0]
       t.string :gender
       t.references :user, null: false, foreign_key: true
       t.references :race, null: false, foreign_key: true
-      t.references :class, null: false, foreign_key: true
+      t.references :job, null: false, foreign_key: true
       t.references :room, null: false, foreign_key: true
-      t.references :characteristic_list, null: false, foreign_key: true
+      t.references :characteristics_list, null: false, foreign_key: true
       t.references :background, null: false, foreign_key: true
       t.string :image_url
 
