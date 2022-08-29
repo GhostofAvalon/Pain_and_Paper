@@ -6,5 +6,4 @@ class User < ApplicationRecord
   has_many :characters
   has_many :rooms
   validates :username, presence: true, uniqueness: true
-  validates :status, presence: true
 end
