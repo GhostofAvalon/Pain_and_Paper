@@ -1,0 +1,2 @@
+class CharacteristicsList < ApplicationRecord
+end
