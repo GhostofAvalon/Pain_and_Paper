@@ -1,0 +1,6 @@
+<h2> Nice</h2>
+
+<button> <%= link_to "Delete",
+ room_path(@room),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %> </button>

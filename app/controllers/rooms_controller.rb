@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
 
   def destroy
     @room.destroy
-    redirect_to root_path
+    redirect_to root_path, status: :see_other
   end
 
   def create
@@ -24,10 +24,6 @@ class RoomsController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def new
-    @rooms = Rooms.new
   end
 
   def update
