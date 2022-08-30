@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts "Creating users"
+    User.create!(email: "rudy@test.com", password: "test22", username: "rudy")
+puts "Finished creating users"
+
+# Créer une room
+
+# voiroom dans index
+# cliquer sur une room (show)#Créer u charatcter
+# Voir un ou plusieurs character dans la show de room
