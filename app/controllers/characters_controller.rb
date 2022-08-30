@@ -3,9 +3,12 @@ class CharactersController < ApplicationController
   end
 
   def show
+
   end
 
   def destroy
+    @Characters.destroy
+    redirect_to root_path
   end
 
   def create
