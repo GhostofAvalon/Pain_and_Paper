@@ -11,3 +11,6 @@ Rails.application.config.assets.paths << Rails.root.join("node_modules")
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
+
+# add custom fonts to the asset pipeline
+Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
