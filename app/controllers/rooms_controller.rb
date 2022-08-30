@@ -3,26 +3,30 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = Room.all
+    @room = Room.new
   end
 
   def show
     @room = Room.find(params[:id])
-    @character = @room.character
+  #  @character = @room.character
   end
 
   def destroy
     @room.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to rooms_path, status: :see_other
   end
+
+  # def new
+  #   @room = Room.new
+  # end
 
   def create
     @room = Room.new(room_params)
-    @room[:room_name] = Room.new(room_params)
-    @room[:user_id] = current_user.id
+    @room.user = current_user
     if @room.save
       redirect_to root_path
     else
-      render 'new'
+      render 'index'
     end
   end
 
@@ -38,11 +42,13 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
   end
 
+private
+
   def set_room
     @room = Room.find(params[:id])
   end
 
-  def rooms_params
-    params.require(:rooms).permit(:name, :user_id)
+  def room_params
+    params.require(:room).permit(:name, :user_id)
   end
 end
