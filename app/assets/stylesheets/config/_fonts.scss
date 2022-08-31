@@ -4,8 +4,8 @@
 
 // Import Fonts from assets
 @font-face {
-  font-family: 'Sabon';
-  src:font-url('Sabon-Roman.otf') format("opentype");
+  font-family: 'Taroca';
+  src:font-url('Taroca-Regular.ttf') format("truetype");
 }
 @font-face {
   font-family: 'Gin';
@@ -15,7 +15,7 @@
 // Define fonts for body and headers
 $body-font: "Nunito", "Helvetica", "sans-serif";
 $headers-font: "Gin", "Helvetica", "sans-serif";
-$styled-font: "Sabon", "Helvetica", "sans-serif";
+$styled-font: "Taroca", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
