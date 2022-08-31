@@ -1,5 +1,6 @@
 class CharactersController < ApplicationController
   def index
+    @room = Room.find(params[:room_id])
     @characters = Character.all
   end
 
