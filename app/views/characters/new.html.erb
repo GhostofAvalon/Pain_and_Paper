@@ -1,6 +1,13 @@
 <div>
   <h1>New list</h1>
   <%= simple_form_for [@room, @character] do |f| %>
+
+    <% if @character.errors.any? %>
+      <div class="error-message">
+        <%= @character.errors.full_messages.to_sentence.capitalize %>
+      </div>
+    <% end %>
+
     <%= f.input :name %>
     <%= f.input :age %>
     <%= f.input :height %>

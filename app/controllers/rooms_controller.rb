@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: %i[show edit update destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def index
     @rooms = Room.all
@@ -43,5 +44,9 @@ class RoomsController < ApplicationController
 
   def room_params
     params.require(:room).permit(:name, :user_id)
+  end
+
+  def record_not_found
+    redirect_to rooms_path
   end
 end
