@@ -1,6 +1,7 @@
 body {
   background-color: $red;
   background-image: asset-url('bg-texture');
+  background-blend-mode: multiply;
 }
 
 section {
