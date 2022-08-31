@@ -11,7 +11,7 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
-  def display_race
+  def races_index
     @races = Race.all
     @user = current_user
   end
