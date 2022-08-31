@@ -4,9 +4,8 @@ Rails.application.routes.draw do
 
   resources :rooms do
     resources :characters, except: %i[edit]
-    get 'characters/:id/race', to: 'pages#display_race', as: "set_race"
   end
-
+  get 'character/:id/race', to: 'pages#display_race', as: 'set_race'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

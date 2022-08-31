@@ -6,12 +6,12 @@ class PagesController < ApplicationController
     @user.save
   end
 
-  def dysplay_job
+  def display_job
     @jobs = Job.all
     @user = current_user
   end
 
-  def dysplay_race
+  def display_race
     @races = Race.all
     @user = current_user
   end
