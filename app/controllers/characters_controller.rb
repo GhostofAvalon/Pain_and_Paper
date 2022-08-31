@@ -20,6 +20,11 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new(character_params)
     @character[:user_id] = current_user.id
+    @character[:room_id] = params[:room_id]
+    @character[:race_id] = Race.first.id
+    @character[:job_id] = Job.first.id
+    @character[:characteristics_list_id] = CharacteristicsList.first.id
+    @character[:background_id] = Background.first.id
     if @character.save
       redirect_to root_path
     else
