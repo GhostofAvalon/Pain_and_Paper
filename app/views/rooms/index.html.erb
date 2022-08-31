@@ -1,0 +1,10 @@
+<h1>My Rooms</h1>
+  <br>
+  <br>
+    <div class="room-form">
+      <%= simple_form_for(@room) do |f| %>
+        <%= f.input :name, label: false, placeholder: "Your Room Name" %>
+        <br>
+        <%= f.submit "Save room", class: "btn-new-form" %>
+      <% end %>
+    </div>
