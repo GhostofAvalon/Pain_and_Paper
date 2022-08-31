@@ -15,6 +15,7 @@ Background.destroy_all
 Job.destroy_all
 Equipment.destroy_all
 Gift.destroy_all
+Spell.destroy_all
 
 # Parsing and Creating 30 Races with Pathfinder API
 url = "https://api.pathfinder2.fr/v1/pf2/ancestry"
@@ -37,7 +38,7 @@ url = "https://api.pathfinder2.fr/v1/pf2/action"
 action_serialized = URI.open(url, "Authorization" => ENV["PATHFINDER_KEY"]).read
 action = JSON.parse(action_serialized)
 
-action["results"].each do |result|
+action["results"].first(30).each do |result|
   Skill.create!(name: result['name'])
 end
 
@@ -46,7 +47,7 @@ url = "https://api.pathfinder2.fr/v1/pf2/background"
 background_serialized = URI.open(url, "Authorization" => ENV["PATHFINDER_KEY"]).read
 background = JSON.parse(background_serialized)
 
-background["results"].first(40).each do |result|
+background["results"].first(30).each do |result|
   specificity = result['data']['description']['value'].split(/<.*?>/).map(&:strip)
                                                       .reject(&:empty?).join(' ').gsub(/\s,/, ',').first(400)
   new_background = Background.new(name: result['name'])
@@ -59,7 +60,7 @@ url = "https://api.pathfinder2.fr/v1/pf2/class"
 job_serialized = URI.open(url, "Authorization" => ENV["PATHFINDER_KEY"]).read
 job = JSON.parse(job_serialized)
 
-job["results"].first(40).each do |result|
+job["results"].first(30).each do |result|
   description = result['data']['description']['value'].split(/<.*?>/).map(&:strip)
                                                       .reject(&:empty?).join(' ').gsub(/\s,/, ',').first(400)
   new_job = Job.new(name: result['name'])
@@ -72,7 +73,7 @@ url = "https://api.pathfinder2.fr/v1/pf2/equipment"
 equipment_serialized = URI.open(url, "Authorization" => ENV["PATHFINDER_KEY"]).read
 equipment = JSON.parse(equipment_serialized)
 
-equipment["results"].each do |result|
+equipment["results"].first(50).each do |result|
   description = result['data']['description']['value'].split(/<.*?>/).map(&:strip)
                                                       .reject(&:empty?).join(' ').gsub(/\s,/, ',').first(400)
   new_equipment = Equipment.new(name: result['name'])
@@ -85,7 +86,7 @@ url = "https://api.pathfinder2.fr/v1/pf2/feat"
 gift_serialized = URI.open(url, "Authorization" => ENV["PATHFINDER_KEY"]).read
 gift = JSON.parse(gift_serialized)
 
-gift["results"].each do |result|
+gift["results"].first(30).each do |result|
   description = result['data']['description']['value'].split(/<.*?>/).map(&:strip)
                                                       .reject(&:empty?).join(' ').gsub(/\s,/, ',').first(400)
   new_gift = Gift.new(name: result['name'])
@@ -98,7 +99,7 @@ url = "https://api.pathfinder2.fr/v1/pf2/spell"
 spell_serialized = URI.open(url, "Authorization" => ENV["PATHFINDER_KEY"]).read
 spell = JSON.parse(spell_serialized)
 
-spell["results"].each do |result|
+spell["results"].first(30).each do |result|
   description = result['data']['description']['value'].split(/<.*?>/).map(&:strip)
                                                       .reject(&:empty?).join(' ').gsub(/\s,/, ',').first(400)
   new_spell = Spell.new(name: result['name'])
