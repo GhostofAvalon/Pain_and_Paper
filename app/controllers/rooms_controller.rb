@@ -7,17 +7,12 @@ class RoomsController < ApplicationController
   end
 
   def show
-    #  @character = @room.character
   end
 
   def destroy
     @room.destroy
     redirect_to rooms_path, status: :see_other
   end
-
-  # def new
-  #   @room = Room.new
-  # end
 
   def create
     @room = Room.new(room_params)

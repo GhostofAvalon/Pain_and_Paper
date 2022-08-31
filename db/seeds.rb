@@ -132,3 +132,13 @@ spell["results"].first(30).each do |result|
   new_spell.description = "#{description}..."
   new_spell.save
 end
+
+# Creating Characters
+Character.create!([{ name: "Grabuj", age: 21, height: 21, level: 21, weight: 21, gender: 'Fluid', user_id: User.find_by(username: "HennyPop").id,
+                     race_id: Race.first.id, job_id: Job.first.id, room_id: Room.find_by(name: "HennyRoom").id, characteristics_list_id: CharacteristicsList.first.id, background_id: Background.first.id },
+                   { name: "Donotrion", age: 21, height: 21, level: 21, weight: 21, gender: 'Fluid', user_id: User.find_by(username: "RudyMars86").id,
+                     race_id: Race.first.id, job_id: Job.first.id, room_id: Room.find_by(name: "RudyRoom").id, characteristics_list_id: CharacteristicsList.first.id, background_id: Background.first.id },
+                   { name: "Mikausor", age: 21, height: 21, level: 21, weight: 21, gender: 'Fluid', user_id: User.find_by(username: "Mike").id,
+                     race_id: Race.first.id, job_id: Job.first.id, room_id: Room.find_by(name: "MikeRoom").id, characteristics_list_id: CharacteristicsList.first.id, background_id: Background.first.id },
+                   { name: "Ghostof", age: 21, height: 21, level: 21, weight: 21, gender: 'Fluid', user_id: User.find_by(username: "GhostOfAvalon").id,
+                     race_id: Race.first.id, job_id: Job.first.id, room_id: Room.find_by(name: "GhostOfAvalonRoom").id, characteristics_list_id: CharacteristicsList.first.id, background_id: Background.first.id }])

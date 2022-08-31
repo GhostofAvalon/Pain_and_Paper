@@ -8,7 +8,7 @@
   <h3>Characters in room: <%= @room.characters.count %></h3>
   <% if @room.characters.count > 0 %>
     <% @room.characters.each do |character| %>
-      <%= link_to character.name, room_character_path(character) %>
+      <%= link_to character.name, room_character_path(@room, character) %>
     <% end %>
   <% else %>
     <%= "No character in this room !" %>
