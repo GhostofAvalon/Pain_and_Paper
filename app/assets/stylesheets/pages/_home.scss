@@ -1,1 +1,118 @@
-// Specific CSS for your home-page
+body {
+  background-color: $red;
+  background-image: asset-url('bg-texture');
+}
+
+section {
+  border: 1px solid black;
+  display: flex;
+  width: 100vw;
+  box-sizing: border-box;
+}
+.diagonalHover {
+  position: absolute;
+  width: 66%;
+  height: 100vh;
+  transition: all 0.3s ease-out;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20vh;
+  height: 20vh;
+  background-image: asset-url('logo-deg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-radius: 50%;
+  z-index: 3;
+  transition: all 0.3s ease-out;
+  filter: drop-shadow(5% 5% 0 $black)
+          drop-shadow(-5% -5% 0 $black);
+}
+.logo-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22vh;
+  height: 22vh;
+  background-image: asset-url('d20');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  z-index: 2;
+  opacity: 0.8;
+  // box-shadow: inset 0 0 0 0.5vh $red;
+}
+
+
+.logo:hover {
+  transform: translate(-50%, -50%) scale(1.3);
+  filter: invert(0) drop-shadow(8px 8px 10px rgba($black, 0.4));
+}
+
+.gm {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  font-family: $styled-font;
+  text-shadow: 0 0 4px $black;
+  color: $red;
+  font-size: 1.7em;
+  padding:  1% 2%;
+  background-color:  rgba($black, 0.9);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px $black;
+  text-align: center;
+}
+
+.player {
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+  font-family: $styled-font;
+  text-shadow: 0 0 4px $black;
+  color: $red;
+  font-size: 2em;
+  padding:  1% 2%;
+  background-color:  rgba($black, 0.9);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px $black;
+}
+
+.diagonalHover.first,
+.diagonalHover.second {
+  background-image: asset-url('gm');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 55%;
+}
+.diagonalHover.second {
+  background-image: asset-url('group');
+  background-position: bottom left 70%;
+}
+
+.diagonalHover.first:hover {
+  width: 75%;
+  z-index: 1;
+}
+.diagonalHover.second:hover {
+  width: 75%;
+  z-index: 1;
+}
+
+.diagonalHover.first {
+  left: 0;
+  top: 0;
+  clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+}
+
+.diagonalHover.second {
+  right: 0;
+  top: 0;
+  clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%);
+}
