@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
 require "json"
 require "open-uri"
 
@@ -16,6 +18,18 @@ Job.destroy_all
 Equipment.destroy_all
 Gift.destroy_all
 Spell.destroy_all
+Room.destroy_all
+User.destroy_all
+
+User.create!([{ email: "anan@anan.com", password: "anananan", username: "HennyPop" },
+              { email: "rudy@rudy.com", password: "rudyrudy", username: "RudyMars86" },
+              { email: "mike@mike.com", password: "mikemike", username: "Mike" },
+              { email: "julien@julien.com", password: "julienjulien", username: "GhostOfAvalon" }])
+
+Room.create!([{ name: "HennyRoom", user_id: User.find_by(username: "HennyPop").id },
+              { name: "RudyRoom", user_id: User.find_by(username: "RudyMars86").id },
+              { name: "MikeRoom", user_id: User.find_by(username: "Mike").id },
+              { name: "GhostOfAvalonRoom", user_id: User.find_by(username: "GhostOfAvalon").id }])
 
 # Parsing and Creating 30 Races with Pathfinder API
 url = "https://api.pathfinder2.fr/v1/pf2/ancestry"

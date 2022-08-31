@@ -1,0 +1,14 @@
+<div>
+  <h1>New list</h1>
+  <%= simple_form_for [@room, @character] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :age %>
+    <%= f.input :height %>
+    <%= f.input :level %>
+    <%= f.input :weight %>
+    <%= f.input :gender %>
+
+    <%# <%= f.input :photo, as: :file %>
+    <%= f.submit "Create Character", class: "btn btn-primary" %>
+  <% end %>
+</div>
