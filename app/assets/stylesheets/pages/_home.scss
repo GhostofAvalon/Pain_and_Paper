@@ -23,13 +23,15 @@ section {
   transform: translate(-50%, -50%);
   width: 20vh;
   height: 20vh;
-  background-image: asset-url('logo-color');
+  background-image: asset-url('logo-deg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   border-radius: 50%;
   z-index: 3;
   transition: all 0.3s ease-out;
+  filter: drop-shadow(5% 5% 0 $black)
+          drop-shadow(-5% -5% 0 $black);
 }
 .logo-bg {
   position: absolute;
@@ -38,13 +40,13 @@ section {
   transform: translate(-50%, -50%);
   width: 22vh;
   height: 22vh;
-  background-image: asset-url('bg-texture');
+  background-image: asset-url('d20');
   background-size: cover;
   background-position: center;
   border-radius: 50%;
   z-index: 2;
   opacity: 0.8;
-  box-shadow: inset 0 0 0 0.5vh $red;
+  // box-shadow: inset 0 0 0 0.5vh $red;
 }
 
 
