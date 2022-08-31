@@ -28,6 +28,8 @@ class CharactersController < ApplicationController
   end
 
   def update
+    @character.update(room_params)
+    redirect_to @character
   end
 
   private
