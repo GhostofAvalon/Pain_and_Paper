@@ -1,5 +1,4 @@
 class CharactersController < ApplicationController
-
   rescue_from ActiveRecord::RecordNotFound do |exception|
     flash.notice = exception.message
     redirect_to rooms_path
