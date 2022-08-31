@@ -23,7 +23,7 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
     @room.user = current_user
     if @room.save
-      redirect_to root_path
+      redirect_to index_path
     else
       render 'index'
     end
