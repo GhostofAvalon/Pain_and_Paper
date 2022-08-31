@@ -23,7 +23,7 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
     @room.user = current_user
     if @room.save
-      redirect_to index_path
+      redirect_to rooms_path
     else
       render 'index'
     end
@@ -31,7 +31,7 @@ class RoomsController < ApplicationController
 
   def update
     if @room.update(room_params)
-      redirect_to root_path
+      redirect_to room_path(@room)
     else
       render 'edit'
     end
