@@ -70,20 +70,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_133736) do
   end
 
   create_table "characters", force: :cascade do |t|
-    t.string "name" # To do
-    t.float "height" # To do
-    t.integer "level" # To do
-    t.text "description" # To do
-    t.integer "age" # To do
-    t.float "weight" # To do
-    t.string "gender" # To do
+    t.string "name"
+    t.float "height"
+    t.integer "level"
+    t.text "description"
+    t.integer "age"
+    t.float "weight"
+    t.string "gender"
     t.bigint "user_id", null: false
-    t.bigint "race_id", null: false # To do
-    t.bigint "job_id", null: false # To do / class
+    t.bigint "race_id", null: false
+    t.bigint "job_id", null: false
     t.bigint "room_id", null: false
-    t.bigint "characteristics_list_id", null: false # To do
-    t.bigint "background_id", null: false # To do
-    t.string "image_url" # To do
+    t.bigint "characteristics_list_id", null: false
+    t.bigint "background_id", null: false
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["background_id"], name: "index_characters_on_background_id"
