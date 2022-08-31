@@ -4,3 +4,37 @@
  room_path(@room),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %> </button>
+
+<div class="player-list">
+  <% @room.characters.each do |character| %>
+    <%= link_to character.name, character %>
+  <% end %>
+</div>
+
+<div class="room-name">
+<ul>Room name: <%= @room.name %></ul>
+</div>
+
+<div class="characters-count">
+<ul>Characters in room: <%= @room.characters.count %></ul>
+<ul>
+  <% if @room.characters.count > 0 %>
+  <% @room.characters.each do |character| %>
+    <%= link_to character.name, character %>
+  <% end %>
+<% else %>
+  <%= "No characters in this room !" %>
+<% end %></ul>
+</div>
+
+<div class="back-index">
+<ul>Link to index page: <%= link_to "Back to index", rooms_path %></ul>
+</div>
+
+<div class="back-home">
+<ul>Link to home page: <%= link_to "Back to home", root_path %></ul>
+</div>
+
+<div class="new-character">
+<ul>link to new character page: <%= link_to "Create new character", new_room_character_path(@room) %></ul>
+</div>
