@@ -1,4 +1,4 @@
-<h1>My Rooms</h1>
+<h1> Rooms </h1>
   <br>
   <br>
     <div class="room-form">
@@ -8,3 +8,10 @@
         <%= f.submit "Save room", class: "btn-new-form" %>
       <% end %>
     </div>
+
+
+<% @rooms.each do |room| %>
+  <%= link_to room_path(room) do %>
+  <ul>  <%= room.name %> </ul>
+  <% end %>
+<% end %>
