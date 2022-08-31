@@ -3,7 +3,7 @@ class Character < ApplicationRecord
   belongs_to :race
   belongs_to :job
   belongs_to :room
-  belongs_to :characteristic_list
+  belongs_to :characteristics_list
   belongs_to :background
   has_many :skills, through: :character_skills
   has_many :spells, through: :character_spells

@@ -20,6 +20,11 @@ Gift.destroy_all
 Spell.destroy_all
 Room.destroy_all
 User.destroy_all
+CharacteristicsList.destroy_all
+
+CharacteristicsList.create!(force_value: 7, dexterity_value: 7,
+                            constitution_value: 7, intelligence_value: 7,
+                            wisdom_value: 7, charisma_value: 7)
 
 User.create!([{ email: "anan@anan.com", password: "anananan", username: "HennyPop" },
               { email: "rudy@rudy.com", password: "rudyrudy", username: "RudyMars86" },
