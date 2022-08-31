@@ -1,0 +1,12 @@
+<h1>Races</h1>
+<p>Select your character race</p>
+
+<ul>
+  <% @races.each do |race| %>
+    <li><strong><%= race.name %></strong></li>
+    <li><%= race.description %></li>
+    <%= link_to "View details", character_race_path(@character, race) %>
+    <a href="#">Select this race</a>
+    <br>
+  <% end %>
+</ul>

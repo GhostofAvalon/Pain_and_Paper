@@ -11,11 +11,6 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
-  def races_index
-    @races = Race.all
-    @user = current_user
-  end
-
   def update_race
     @character.race = params[:race]
     @character.save
