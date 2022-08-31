@@ -1,16 +1,16 @@
 <section>
-  <a href="#">
+  <%= link_to gm_path do %>
     <div class="diagonalHover first">
       <p class="gm">Game Master</p>
     </div>
- </a>
+  <% end %>
 
  <div class="logo"></div>
  <div class="logo-bg"></div>
 
-  <a href="#test">
+  <%= link_to player_path do %>
     <div class="diagonalHover second">
       <p class="player">Player</p>
     </div>
-  </a>
+  <% end %>
 </section>
