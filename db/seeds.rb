@@ -11,6 +11,7 @@ require "json"
 require "open-uri"
 
 # Destroy every element in current DB
+Character.destroy_all
 Race.destroy_all
 Skill.destroy_all
 Background.destroy_all
@@ -47,6 +48,12 @@ ancestry["results"].first(30).each do |result|
     new_race.description = result['data']['description']['value'].match(/<em>(.*)<\/em>/)[1]
   elsif result['data']['description']['value'].match(/>(\w{1}.*)</)
     new_race.description = result['data']['description']['value'].match(/>(\w{1}.*)</)[1]
+  end
+
+  if new_race.name == "Android"
+    new_race.description = "Technological wonders from another world, androids have synthetic bodies and living souls.
+                            Their dual nature makes them quick-thinking and calm under pressure, but comfortable in
+                            stillness and solitude."
   end
   new_race.save
 end
