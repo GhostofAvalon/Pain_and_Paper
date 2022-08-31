@@ -27,7 +27,7 @@ class CharactersController < ApplicationController
     @character[:characteristics_list_id] = CharacteristicsList.first.id
     @character[:background_id] = Background.first.id
     if @character.save
-      redirect_to root_path
+      redirect_to set_race_path(@character)
     else
       render :new, status: :unprocessable_entity
     end
