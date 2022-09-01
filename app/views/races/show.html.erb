@@ -1,2 +1,25 @@
-<h1>Races#show</h1>
-<p>Find me in app/views/races/show.html.erb</p>
+<% if @race.name == "Anadi" %>
+  <h1>
+    ANADI DETAILS
+  </h1>
+  <p>
+    Anadi people are reclusive, sapient spiders who hail from the jungles of southern Garund. Though they act in many ways like natural-born shapeshifters, their twin forms actually stem from carefully developed magic.
+  </p>
+<% end %>
+<% if @race.name == "Android" %>
+  <h1>
+    ANDROID DETAILS
+  </h1>
+  <p>
+    Technological wonders from another world, androids have synthetic bodies and living souls. Their dual nature makes them quick-thinking and calm under pressure, but comfortable in stillness and solitude.
+  </p>
+<% end %>
+<% if @race.name == "Automaton" %>
+  <h1>
+    AUTOMATON DETAILS
+  </h1>
+  <p>
+    These intelligent constructs house actual souls and represent what remains of a dying empire’s last attempt at greatness. Automatons combine technological ingenuity with magical power, creating a blended being wholly unique to Golarion.
+  </p>
+
+<% end %>
