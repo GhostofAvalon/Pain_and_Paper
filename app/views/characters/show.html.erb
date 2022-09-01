@@ -10,3 +10,8 @@
 <h3>Race :</h3><%= @character.race[:name] %>
 <h3>Job :</h3><%= @character.job[:name] %>
 <h3>Background :</h3><%= @character.background[:specificity] %>
+
+
+<%= link_to "Edit Race", character_races_path(@character) %>
+<%= link_to "Edit Class", character_jobs_path(@character) %>
+<%= link_to "Edit Characteristics", edit_character_characteristics_list_path(@character) %>

@@ -1,0 +1,16 @@
+<h1>Classes</h1>
+<p>Select your character class</p>
+
+<ul>
+  <% @jobs.each do |job| %>
+    <li><strong><%= job.name %></strong></li>
+    <li><%= job.description %></li>
+    <%= link_to "View details", character_job_path(@character, job) %>
+    <div>
+      <%= simple_form_for [@character] do |f| %>
+        <%= f.hidden_field :job, value: job.id  %>
+        <%= f.submit "Select Class" %>
+      <% end %>
+    </div>
+  <% end %>
+</ul>

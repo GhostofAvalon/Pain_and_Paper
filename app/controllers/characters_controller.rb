@@ -43,8 +43,16 @@ class CharactersController < ApplicationController
   end
 
   def update
-    @character.update(room_params)
-    redirect_to @character
+    @character = Character.find(params[:id])
+    if params[:character][:race]
+      @character.race_id = params[:character][:race]
+      @character.save
+      redirect_to character_jobs_path(@character)
+    elsif params[:character][:job]
+      @character.job_id = params[:character][:job]
+      @character.save
+      redirect_to edit_character_characteristics_list_path(@character)
+    end
   end
 
   private

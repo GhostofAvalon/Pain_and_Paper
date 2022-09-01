@@ -1,0 +1,17 @@
+<div class="toothbrush-form-container">
+  <h1>Update <%= @character.name %> Characteristics</h1>
+  <br>
+  <br>
+    <div>
+      <%= simple_form_for [@character, @characteristics_list] do |f| %>
+        <%= f.input :force_value %>
+        <%= f.input :dexterity_value %>
+        <%= f.input :constitution_value %>
+        <%= f.input :intelligence_value %>
+        <%= f.input :wisdom_value %>
+        <%= f.input :charisma_value %>
+        <br>
+        <%= f.submit "Save characteristics" %>
+      <% end %>
+    </div>
+</div>
