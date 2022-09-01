@@ -13,16 +13,30 @@
     </div>
   </div>
 
-  <ul class="rooms-cards-list">
-    <% @rooms.each do |room| %>
-      <div class="room-card">
-        <%= link_to room_path(room) do %>
-          <li><%= room.name %></li>
-          <%= link_to "Delete", room_path(room),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        <% end %>
-      </div>
+<ul>
+  <% @rooms.each do |room| %>
+    <%= link_to room_path(room) do %>
+      <% if room.photo.attached? %>
+        <div
+          class="card-category"
+          style="background-image: url('<%= cl_image_path room.photo.key, height: 300, crop: :fill %>');">
+        </div>
+      <% else %>
+        <div
+          class="card-category"
+          style="
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.3)
+              ),
+              url(https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/paradontax/en_SA/Sierra-update/banner-3.jpg?auto=format);
+          ">
+        </div>
+      <% end %>
+      <li><%= room.name %></li>
+      <%= link_to "Delete", room_path(room),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     <% end %>
-  </ul>
-
+  <% end %>
+</ul>
 </div>

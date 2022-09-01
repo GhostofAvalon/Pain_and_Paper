@@ -15,6 +15,10 @@ class RoomsController < ApplicationController
     redirect_to rooms_path, status: :see_other
   end
 
+  def new
+    @room = Room.new
+  end
+
   def create
     @room = Room.new(room_params)
     @room.user = current_user
@@ -43,7 +47,7 @@ class RoomsController < ApplicationController
   end
 
   def room_params
-    params.require(:room).permit(:name, :user_id)
+    params.require(:room).permit(:name, :user_id, :photo)
   end
 
   def record_not_found
