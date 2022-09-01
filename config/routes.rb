@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :characters, only: %i[update]
 
   resources :rooms do
-    resources :characters, only: %i[show create index new]
+    resources :characters, only: %i[show create index new destroy]
   end
 
   resources :characters, only: %i[show] do
