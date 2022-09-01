@@ -20,6 +20,7 @@ class CharactersController < ApplicationController
   def destroy
     @character = Character.find(params[:id])
     @character.destroy
+    redirect_to room_path
   end
 
   def new

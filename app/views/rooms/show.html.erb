@@ -9,6 +9,8 @@
   <% if @room.characters.count > 0 %>
     <% @room.characters.each do |character| %>
       <%= link_to character.name, room_character_path(@room, character) %>
+      <%= link_to "Delete", room_character_path(@room, character),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     <% end %>
   <% else %>
     <%= "No character in this room !" %>
