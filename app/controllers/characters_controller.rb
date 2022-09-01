@@ -52,6 +52,10 @@ class CharactersController < ApplicationController
       @character.job_id = params[:character][:job]
       @character.save
       redirect_to edit_character_characteristics_list_path(@character)
+    elsif params[:character][:background]
+      @character.background_id = params[:character][:background]
+      @character.save
+      redirect_to root_path
     end
   end
 
