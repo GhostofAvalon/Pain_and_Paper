@@ -1,0 +1,20 @@
+<h1>Gift</h1>
+<p>Select your character gifts</p>
+<% n=3 %>
+<p><%= n>1 ? "Gifts" : "Gift"%> remaining  <%= n %></p>
+
+<ul>
+  <% @gifts.each do |gift| %>
+    <li><strong><%= gift.name %></strong></li>
+    <li><%= gift.description %></li>
+    <% @gift = Gift.find(gift) %>
+
+    <%simple_form_for [@character, @gift] do |f| %>
+      <%= f.hidden :selected , selected %>
+      <%= f.label :selected, "Select this gift" %>
+      <%= f.check_box :selected %>
+      <%= f.submit "Select this gift" %>
+    <% end %>
+
+  <% end %>
+</ul>
