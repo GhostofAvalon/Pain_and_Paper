@@ -2,12 +2,16 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
+  resources :characters, only: %i[update]
+
   resources :rooms do
     resources :characters, only: %i[show create index new]
   end
 
   resources :characters, only: %i[show] do
-    resources :races
+    resources :races, only: %i[show index]
+    resources :jobs, only: %i[show index]
+    resources :characteristics_lists, only: %i[edit update]
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -6,7 +6,11 @@
     <li><strong><%= race.name %></strong></li>
     <li><%= race.description %></li>
     <%= link_to "View details", character_race_path(@character, race) %>
-    <a href="#">Select this race</a>
-    <br>
+    <div>
+      <%= simple_form_for [@character] do |f| %>
+        <%= f.hidden_field :race, value: race.id  %>
+        <%= f.submit "Select race" %>
+      <% end %>
+    </div>
   <% end %>
 </ul>
