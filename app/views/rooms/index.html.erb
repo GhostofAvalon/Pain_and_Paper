@@ -1,20 +1,28 @@
-<h1> Rooms </h1>
+<div class="container">
 
-<div>
-  <%= simple_form_for(@room) do |f| %>
-    <%= f.input :name, label: false, placeholder: "Your Room Name" %>
-    <br>
-    <%= f.submit "Save room" %>
-  <% end %>
-</div>
+  <div class="room-selection-form">
+    <h1> Select a room </h1>
+    <div class="form-fields">
+      <%= simple_form_for(@room) do |f| %>
+        <%= f.input :name, label: false, placeholder: "Enter a room id" %>
+        <br>
+        <div class="centered-simple-form-button">
+          <%= f.submit "Find room" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-
-<ul>
-  <% @rooms.each do |room| %>
-    <%= link_to room_path(room) do %>
-      <li><%= room.name %></li>
-      <%= link_to "Delete", room_path(room),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <ul class="rooms-cards-list">
+    <% @rooms.each do |room| %>
+      <div class="room-card">
+        <%= link_to room_path(room) do %>
+          <li><%= room.name %></li>
+          <%= link_to "Delete", room_path(room),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+
+</div>
