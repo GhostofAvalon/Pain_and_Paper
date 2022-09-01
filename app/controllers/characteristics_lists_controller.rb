@@ -9,7 +9,7 @@ class CharacteristicsListsController < ApplicationController
     new_characteristics_list = CharacteristicsList.create!(characteristics_list_params)
     @character.characteristics_list = new_characteristics_list
     @character.save
-    redirect_to root_path
+    redirect_to character_backgrounds_path(@character)
   end
 
   private
