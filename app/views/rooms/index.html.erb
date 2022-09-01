@@ -1,13 +1,17 @@
-<h1> Rooms </h1>
+<div class="container">
 
-<div>
-  <%= simple_form_for(@room) do |f| %>
-    <%= f.input :name, label: false, placeholder: "Your Room Name" %>
-    <br>
-    <%= f.submit "Save room" %>
-  <% end %>
-</div>
-
+  <div class="room-selection-form">
+    <h1> Select a room </h1>
+    <div class="form-fields">
+      <%= simple_form_for(@room) do |f| %>
+        <%= f.input :name, label: false, placeholder: "Enter a room id" %>
+        <br>
+        <div class="centered-simple-form-button">
+          <%= f.submit "Find room" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
 <ul>
   <% @rooms.each do |room| %>
@@ -35,6 +39,4 @@
     <% end %>
   <% end %>
 </ul>
-
-
-<%= link_to "New Room", new_room_path %>
+</div>

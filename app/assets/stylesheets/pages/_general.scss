@@ -11,7 +11,33 @@ section {
   box-sizing: border-box;
 }
 
+
 .card-category {
   width: 100px;
   height: 100px;
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rooms-cards-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20%;
+}
+
+.room-selection-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centered-simple-form-button {
+  text-align: center;
 }
