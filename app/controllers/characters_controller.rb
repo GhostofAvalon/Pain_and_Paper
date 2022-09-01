@@ -1,4 +1,9 @@
 class CharactersController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound do |exception|
+    flash.notice = exception.message
+    redirect_to rooms_path
+  end
+
   def index
     @room = Room.find(params[:room_id])
     @characters = Character.all
@@ -7,6 +12,9 @@ class CharactersController < ApplicationController
   def show
     @room = Room.find(params[:room_id])
     @character = Character.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash.notice = 'Character not found'
+    redirect_to rooms_path
   end
 
   def destroy
