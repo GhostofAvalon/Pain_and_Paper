@@ -1,0 +1,13 @@
+<div>
+  <h1>My Room</h1>
+  <br>
+  <br>
+    <div>
+      <%= simple_form_for(@room) do |f| %>
+        <%= f.input :name, label: false, placeholder: "Your room name" %>
+        <%= f.input :photo, as: :file, label: false %>
+        <br>
+        <%= f.submit "Save room" %>
+      <% end %>
+    </div>
+</div>
