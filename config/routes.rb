@@ -17,10 +17,9 @@ Rails.application.routes.draw do
     resources :gifts, only: %i[index create update]
     resources :spells, only: %i[index create]
     resources :characters_gifts, only: %i[create], as: "create_character_gift"
-
+    resources :characters_spells, only: %i[create], as: "create_character_spell"
+    resources :characters_skills, only: %i[create], as: "create_character_skill"
   end
-
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

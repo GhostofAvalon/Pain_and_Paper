@@ -13,3 +13,8 @@
         <% end %>
     </div>
 <% end %>
+    <%= link_to "Finish", character_spells_path(@character) %>
+
+<% if @n == 0 %>
+    <%= link_to "Finish", character_spells_path(@character) %>
+    <% end %>

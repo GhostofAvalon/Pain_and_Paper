@@ -1,12 +1,16 @@
-<h1>Skills</h1>
+<h1>Skill</h1>
 <p>Select your character skill</p>
-<% n=3 %>
-<p><%= n>1 ? "Skills" : "Skill"%> remaining  <%= n %></p>
-<ul>
-  <% @skills.each do |skill| %>
-    <li><strong><%= skill.name %></strong></li>
-    <li><%= skill.description %></li>
-    <a href="#">Select this skill</a>
-    <br>
-  <% end %>
-</ul>
+<% @n %>
+<p><%= @n>1 ? "Skills" : "Skill"%> remaining  <%= @n %></p>
+
+
+<% @n.times do %>
+    <div>
+        <%=simple_form_for ([@character, @skills, @character_skill]), url: character_create_character_skill_index_path do |f| %>
+          <%= f.input :skill_id , collection: @skills %>
+          <%= f.hidden_field :n, value: @n %>
+          <%= f.submit "Select this skill"%>
+        <% end %>
+    </div>
+<% end %>
+    <%= link_to "Finish", room_character_path(@room, @character) %>
