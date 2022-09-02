@@ -2,20 +2,23 @@ class GiftsController < ApplicationController
   def index
     @gifts = Gift.all
     @character = Character.find(params[:character_id])
+    @character_gift = CharacterGift.new
+    @n = rand(1..5)
   end
 
-  def update
+  def create
     @gift = Gift.find(params[:id])
-    @character.gift.update(gift_params)
+    @character_gift.character_id = params[:character_id]
     redirect_to spells_path
   end
 
   def add
     @character.gifts << @gift
-    consoler.log("Added #{@gift.name} to #{@character.name}")
+    puts "Added #{@gift.name} to #{@character.name}"
   end
 
   private
+
   def gift_params
     params.require(:gift).permit(:name, :description)
   end
