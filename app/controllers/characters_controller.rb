@@ -56,7 +56,7 @@ class CharactersController < ApplicationController
     elsif params[:character][:background]
       @character.background_id = params[:character][:background]
       @character.save
-      redirect_to root_path
+      redirect_to character_gifts_path(@character)
     end
   end
 

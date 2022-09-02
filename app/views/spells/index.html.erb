@@ -1,13 +1,16 @@
-<h1>Spells</h1>
-<p>Select your character spell</p>
-<% n=1 %>
-<p><%= n>1 ? "Spells" : "Spell"%> remaining  <%= n %></p>
+<h1>Spell</h1>
+<p>Select your character spells</p>
+<% @n %>
+<p><%= @n>1 ? "Spells" : "Spell"%> remaining  <%= @n %></p>
 
-<ul>
-  <% @spells.each do |spell| %>
-    <li><strong><%= spell.name %></strong></li>
-    <li><%= spell.description %></li>
-    <a href="#">Select this spell</a>
-    <br>
-  <% end %>
-</ul>
+
+<% @n.times do %>
+    <div>
+        <%=simple_form_for ([@character, @spells, @character_spell]), url: character_create_character_spell_index_path do |f| %>
+          <%= f.input :spell_id , collection: @spells %>
+          <%= f.hidden_field :n, value: @n %>
+          <%= f.submit "Select this spell"%>
+        <% end %>
+    </div>
+<% end %>
+    <%= link_to "Finish", character_skills_path(@character) %>
