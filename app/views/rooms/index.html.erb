@@ -3,47 +3,62 @@
   <div class="room-selection-form">
     <h1> Select a room </h1>
     <div class="form-fields">
-      <%= simple_form_for(@room) do |f| %>
-        <%= f.input :name, label: false, placeholder: "Enter a room id" %>
-        <br>
-        <div class="centered-simple-form-button">
-          <%= f.submit "Create room" %>
+      <form action="/rooms" method="get">
+        <div>
+            <input type="id" name="room_id" placeholder="Enter a room ID">
         </div>
-      <% end %>
+        <div class="center">
+          <button type="button">Find a room</button>
+        </div>
+      </form>
     </div>
   </div>
 
   <ul class="rooms-cards-list">
     <% @rooms.each do |room| %>
-      <li>
-        <%= link_to room_path(room) do %>
-          <% if room.photo.attached? %>
+      <% if room.photo.attached? %>
+        <li>
+          <%= link_to room_path(room), class: "card-link" do %>
             <div class="room-card",
-              style="background-image: url('<%= cl_image_path room.photo.key, height: 300, crop: :fill %>');">
-                <%= room.name %>
-                <%= link_to "Delete", room_path(room),
-                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-            </div>
-          <% else %>
-            <div  class="room-card",
-              style="
-                background-image: linear-gradient(
+              style="background-image: linear-gradient(
                     rgba(0, 0, 0, 0.5),
-                    rgba(0, 0, 0, 0.3)
-                  ),
-                  url(https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/paradontax/en_SA/Sierra-update/banner-3.jpg?auto=format);
-              ">
+                    rgba(0, 0, 0, 0.3)),
+                    url('<%= cl_image_path room.photo.key, height: 300, crop: :fill %>');">
                 <%= room.name %>
-                <%= link_to "Delete", room_path(room),
-                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                <%= link_to room_path(room), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                  <i class="fa-solid fa-trash-can trash-icon"></i>
+                <% end %>
             </div>
           <% end %>
-        <% end %>
-      </li>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to room_path(room), class: "card-link" do %>
+            <div  class="room-card",
+              style="background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.3)),
+                    url(https://www.xboxtavern.com/wp-content/uploads/2018/12/KnightsPenPap2RevRBB.jpg);">
+                <%= room.name %>
+                <%= link_to room_path(room), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                  <i class="fa-solid fa-trash-can trash-icon"></i>
+                <% end %>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
     <% end %>
+    <li class="plus-icon-div">
+      <%= link_to new_room_path do %>
+        <i class="fa-light fa-plus plus-icon"></i>
+      <% end %>
+    </li>
   </ul>
-</div>
 
-<div>
-  <h3> <%= link_to "Back to home", root_path %></h3>
+  <div>
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-house icon"></i>
+    <% end %>
+  </div>
+
 </div>

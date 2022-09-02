@@ -4,6 +4,21 @@
 //   background-blend-mode: multiply;
 // }
 
+a {
+  text-decoration: none;
+}
+
+.plus-icon-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus-icon {
+  font-size: 32px;
+  color: $black;
+}
+
 section {
   border: 1px solid black;
   display: flex;
@@ -11,17 +26,38 @@ section {
   box-sizing: border-box;
 }
 
+.card-link {
+  height: inherit;
+}
+
+.trash-icon {
+  color: $white;
+  font-size: 12px;
+  margin-left: 70%;
+  margin-bottom: 5%;
+}
+
+.icon {
+  text-decoration: none;
+  color: $black;
+}
 
 .room-card {
-  width: 100px;
-  height: 100px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.3)),
-                    url(https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/paradontax/en_SA/Sierra-update/banner-3.jpg?auto=format);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding-top: 12px;
+  width: 40vw;
+  height: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
 }
 
 .container {
   width: 90%;
-  margin: 0 auto;
+  margin: 15px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,6 +82,6 @@ section {
   align-items: center;
 }
 
-.centered-simple-form-button {
+.center {
   text-align: center;
 }
