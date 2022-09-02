@@ -8,6 +8,7 @@
     <div>
         <%=simple_form_for ([@character, @gifts, @character_gift]), url: character_create_character_gift_index_path do |f| %>
           <%= f.input :gift_id , collection: @gifts %>
+          <%= f.hidden_field :n, value: @n %>
           <%= f.submit "Select this gift"%>
         <% end %>
     </div>
