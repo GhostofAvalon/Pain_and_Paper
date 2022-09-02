@@ -13,11 +13,12 @@ Rails.application.routes.draw do
     resources :jobs, only: %i[show index]
     resources :backgrounds, only: %i[show index]
     resources :characteristics_lists, only: %i[edit update]
-    resources :skills, only: %i[index update]
-    resources :gifts, only: %i[index update]
-    resources :spells, only: %i[index update]
-  end
+    resources :skills, only: %i[index create]
+    resources :gifts, only: %i[index create update]
+    resources :spells, only: %i[index create]
+    resources :characters_gifts, only: %i[create], as: "create_character_gift"
 
+  end
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
