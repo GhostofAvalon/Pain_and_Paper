@@ -1,12 +1,13 @@
-<h2> Show </h2>
+<article class="bg">
+<h2 class= "title"> Room </h2>
 
 <div>
-  <h2>Room name: <%= @room.name %></h2>
+  <h2 class= "room-name">Room name: <%= @room.name %></h2>
 </div>
 
 <div>
-  <h3>Characters in room: <%= @room.characters.count %></h3>
-  <% if @room.characters.count > 0 %>
+  <h3 class= "character-name">Characters in room: <%= @room.characters.count %></h3>
+  <h3 class= "character-count"><% if @room.characters.count > 0 %>
     <% @room.characters.each do |character| %>
       <%= link_to character.name, room_character_path(@room, character) %>
       <%= link_to "Delete", room_character_path(@room, character),
@@ -15,16 +16,17 @@
   <% else %>
     <%= "No character in this room !" %>
   <% end %>
+</div></h3>
+
+<div>
+  <h3 class= "index-page"><%= link_to "Back to index", rooms_path %></h3>
 </div>
 
 <div>
-  <h3>Link to index page: <%= link_to "Back to index", rooms_path %></h3>
+  <h3 class= "home-page"><%= link_to "Back to home", root_path %></h3>
 </div>
 
 <div>
-  <h3>Link to home page: <%= link_to "Back to home", root_path %></h3>
+  <h2 class= "character-page"><%= link_to "Create new character", new_room_character_path(@room) %></h2>
 </div>
-
-<div>
-  <h3>link to new character page: <%= link_to "Create new character", new_room_character_path(@room) %></h3>
-</div>
+</article>
