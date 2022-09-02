@@ -29,7 +29,12 @@ section {
   padding: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20%;
+  grid-gap: 32px;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .room-selection-form {
