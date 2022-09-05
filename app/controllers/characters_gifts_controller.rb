@@ -6,8 +6,6 @@ class CharactersGiftsController < ApplicationController
     @character_gift.character = @character
     @character_gift.gift_id = @gift
     @character_gift.save
-    @n = params[:character_gift][:n].to_i
-    @n -= 1
   end
 
   private

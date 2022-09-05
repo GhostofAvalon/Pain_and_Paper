@@ -1,16 +1,9 @@
-<h1>Skill</h1>
-<p>Select your character skill</p>
-<% @n %>
-<p><%= @n>1 ? "Skills" : "Skill"%> remaining  <%= @n %></p>
+<h1>Skills</h1>
 
+<div data-controller="counter">
 
-<% @n.times do %>
-    <div>
-        <%=simple_form_for ([@character, @skills, @character_skill]), url: character_create_character_skill_index_path do |f| %>
-          <%= f.input :skill_id , collection: @skills %>
-          <%= f.hidden_field :n, value: @n %>
-          <%= f.submit "Select this skill"%>
-        <% end %>
-    </div>
-<% end %>
-    <%= link_to "Finish", room_character_path(@room, @character) %>
+  <p>Select <span data-counter-target="counter"><%= 5 - @character.skills.count %></span> more skills</p>
+  <%= render 'shared/skills_form' %>
+  <%= link_to "Finish", character_spells_path(@character) %>
+
+</div>

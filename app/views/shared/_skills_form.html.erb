@@ -1,0 +1,14 @@
+<% nums = [1, 2, 3, 4, 5] %>
+
+<% nums.each do |num| %>
+  <% if @character.skills.count < (6-num)  %>
+    <div data-counter-target="form<%=num%>">
+      <%=simple_form_for ([@character, @skills, @character_skill]), data: { action: "counter#hide#{num} change->counter#display#{num}", target: "counter.form#{num}" },
+                                                                  url: character_create_character_skill_index_path do |f| %>
+        <%= f.input :skill_id , collection: @skills %>
+        <%= f.submit "Select this skill"%>
+      <% end %>
+      <p data-counter-target="description<%=num%>" hidden="true"><%= Skill.all.sample.description %></p>
+    </div>
+  <% end %>
+<% end %>
