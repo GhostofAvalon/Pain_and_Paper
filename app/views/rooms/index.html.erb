@@ -25,9 +25,9 @@
                     rgba(0, 0, 0, 0.5),
                     rgba(0, 0, 0, 0.3)),
                     url('<%= cl_image_path room.photo.key, height: 300, crop: :fill %>');">
-                <h2><%= room.name %></h2>
+                <h2 class="room-card-title"><%= room.name %></h2>
                 <%= link_to room_path(room), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                  <i class="fa-solid fa-trash-can trash-icon"></i>
+                  <i class="fa-solid fa-skull-crossbones trash-icon"></i>
                 <% end %>
             </div>
           <% end %>

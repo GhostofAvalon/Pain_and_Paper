@@ -9,17 +9,17 @@
   text-decoration: none;
 
   &:visited{
-    color: $red;
+    color: $white80;
     text-decoration: none;
     opacity: 0.42;
   }
   &:hover{
-    color: $red;
+    color: $white60;
     opacity: 0.7;
-    text-decoration: underline;
+    text-decoration: none;
   }
   &:active{
-    color: $black80;
+    color: $white40;
     opacity: 1;
     text-decoration: none;
   }
