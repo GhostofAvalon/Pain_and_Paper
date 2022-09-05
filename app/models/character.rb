@@ -14,4 +14,5 @@ class Character < ApplicationRecord
   has_many :gifts, through: :character_gifts
   has_many :equipments, through: :character_equipments
   validates :name, :age, :height, :level, :weight, :gender, presence: true
+  has_one_attached :photo
 end

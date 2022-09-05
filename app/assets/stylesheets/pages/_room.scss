@@ -34,7 +34,10 @@
                     rgba(0, 0, 0, 0.5),
                     rgba(0, 0, 0, 0.3)),
                     asset-url(room-default);
-}
+  background-size: cover;
+  background-position: center center;
+                  }
+
 
 .room-card-title {
   text-align: right;
@@ -76,7 +79,7 @@ a .trash-icon {
   background-image: asset-url(bg-card);
   border-radius: 8px;
   color: $white !important;
-  font-size: 14px;
+  font-size: 18px;
   font-family: $headers-font;
   background-color: $red !important;
 }
