@@ -1,20 +1,9 @@
-<h1>Gift</h1>
-<p>Select your character gifts</p>
-<% @n %>
-<p><%= @n>1 ? "Gifts" : "Gift"%> remaining  <%= @n %></p>
+<h1>Gifts</h1>
 
+<div data-controller="counter">
 
-<% @n.times do %>
-    <div>
-        <%=simple_form_for ([@character, @gifts, @character_gift]), url: character_create_character_gift_index_path do |f| %>
-          <%= f.input :gift_id , collection: @gifts %>
-          <%= f.hidden_field :n, value: @n %>
-          <%= f.submit "Select this gift"%>
-        <% end %>
-    </div>
-<% end %>
-    <%= link_to "Finish", character_spells_path(@character) %>
+  <p>Select <span data-counter-target="counter"><%= 5 - @character.gifts.count %></span> more gifts</p>
+  <%= render 'shared/gifts_form' %>
+  <%= link_to "Finish", character_skills_path(@character) %>
 
-<% if @n == 0 %>
-    <%= link_to "Finish", character_spells_path(@character) %>
-    <% end %>
+</div>

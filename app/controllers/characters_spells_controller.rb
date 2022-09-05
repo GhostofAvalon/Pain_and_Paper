@@ -6,8 +6,6 @@ class CharactersSpellsController < ApplicationController
     @character_spell.character = @character
     @character_spell.spell_id = @spell
     @character_spell.save
-    @n = params[:character_spell][:n].to_i
-    @n -= 1
   end
 
   private

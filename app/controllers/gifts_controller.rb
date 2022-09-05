@@ -3,6 +3,5 @@ class GiftsController < ApplicationController
     @gifts = Gift.all
     @character = Character.find(params[:character_id])
     @character_gift = CharacterGift.new
-    @n = rand(1..5)
   end
 end

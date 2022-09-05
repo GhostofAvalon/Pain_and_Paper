@@ -58,14 +58,17 @@ ancestry["results"].first(30).each do |result|
   new_race.save
 end
 
-
 # Parsing and Creating Skills with Pathfinder API
 url = "https://api.pathfinder2.fr/v1/pf2/action"
 action_serialized = URI.open(url, "Authorization" => ENV["PATHFINDER_KEY"]).read
 action = JSON.parse(action_serialized)
 
 action["results"].first(30).each do |result|
-  Skill.create!(name: result['name'])
+  description = result['data']['description']['value'].split(/<.*?>/).map(&:strip)
+                                                      .reject(&:empty?).join(' ').gsub(/\s,/, ',').first(200)
+  new_skill = Skill.new(name: result['name'])
+  new_skill.description = "#{description}..."
+  new_skill.save
 end
 
 # Parsing and Creating 40 Backgrounds with Pathfinder API
@@ -101,7 +104,7 @@ equipment = JSON.parse(equipment_serialized)
 
 equipment["results"].first(50).each do |result|
   description = result['data']['description']['value'].split(/<.*?>/).map(&:strip)
-                                                      .reject(&:empty?).join(' ').gsub(/\s,/, ',').first(400)
+                                                      .reject(&:empty?).join(' ').gsub(/\s,/, ',').first(200)
   new_equipment = Equipment.new(name: result['name'])
   new_equipment.description = "#{description}..."
   new_equipment.save
@@ -114,7 +117,7 @@ gift = JSON.parse(gift_serialized)
 
 gift["results"].first(30).each do |result|
   description = result['data']['description']['value'].split(/<.*?>/).map(&:strip)
-                                                      .reject(&:empty?).join(' ').gsub(/\s,/, ',').first(400)
+                                                      .reject(&:empty?).join(' ').gsub(/\s,/, ',').first(200)
   new_gift = Gift.new(name: result['name'])
   new_gift.description = "#{description}..."
   new_gift.save
@@ -127,7 +130,7 @@ spell = JSON.parse(spell_serialized)
 
 spell["results"].first(30).each do |result|
   description = result['data']['description']['value'].split(/<.*?>/).map(&:strip)
-                                                      .reject(&:empty?).join(' ').gsub(/\s,/, ',').first(400)
+                                                      .reject(&:empty?).join(' ').gsub(/\s,/, ',').first(200)
   new_spell = Spell.new(name: result['name'])
   new_spell.description = "#{description}..."
   new_spell.save
