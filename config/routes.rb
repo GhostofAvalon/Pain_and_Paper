@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "pages#prehome"
+  get '/pages/home', to: 'pages#home', as: 'home'
 
   resources :characters, only: %i[update]
 
