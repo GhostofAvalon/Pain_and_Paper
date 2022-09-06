@@ -1,25 +1,38 @@
-<% if @race.name == "Anadi" %>
-  <h1>
-    ANADI DETAILS
+<% if @race.name == "Elf" %>
+  <h1 class="show-title">
+    ELF
   </h1>
   <p>
     Anadi people are reclusive, sapient spiders who hail from the jungles of southern Garund. Though they act in many ways like natural-born shapeshifters, their twin forms actually stem from carefully developed magic.
   </p>
 <% end %>
-<% if @race.name == "Android" %>
-  <h1>
-    ANDROID DETAILS
+<% if @race.name == "Human" %>
+<article class="show-container">
+  <%= image_tag("ancestries/ancestry-human-detail.png") %>
+  <h1 class="show-title">
+      HUMAN
   </h1>
-  <p>
-    Technological wonders from another world, androids have synthetic bodies and living souls. Their dual nature makes them quick-thinking and calm under pressure, but comfortable in stillness and solitude.
+  <div class="show-container2">
+  <%= image_tag("top-border.png") %>
+  <p class="show-description">
+    As unpredictable and varied as any of Golarion’s peoples, humans have exceptional drive and the capacity to endure and expand. Though many civilizations thrived before humanity rose to prominence, humans have built some of the greatest and the most terrible societies throughout the course of history, and today they are the most populous people in the realms around the Inner Sea.  </p>
   </p>
-<% end %>
-<% if @race.name == "Automaton" %>
-  <h1>
-    AUTOMATON DETAILS
-  </h1>
-  <p>
-    These intelligent constructs house actual souls and represent what remains of a dying empire’s last attempt at greatness. Automatons combine technological ingenuity with magical power, creating a blended being wholly unique to Golarion.
-  </p>
+  <%= image_tag("bottom-border.png") %>
+  </div>
+  </article>
+  <div class="further">
+    <p class="show-description2">Humans’ ambition, versatility, and exceptional potential have led to their status as the world’s predominant ancestry. Their empires and nations are vast, sprawling things, and their citizens carve names for themselves with the strength of their sword arms and the power of their spells. Humanity is diverse and tumultuous, running the gamut from nomadic to imperial, sinister to saintly. Many of them venture forth to explore, to map the expanse of the multiverse, to search for long-lost treasure, or to lead mighty armies to conquer their neighbors for no better reason than because they can.</p>
+    <p class="show-description2">If you want a character who can be just about anything, you should play a human.</p>
+    <h3>You Might...</h3>
+      <p class="show-description2"> Strive to achieve greatness, either in your own right or on behalf of a cause.</p>
+      <p class="show-description2"> Seek to understand your purpose in the world.</p>
+      <p class="show-description2"> Cherish your relationships with family and friends.</p>
+    <h3>Others Probably...</h3>
+      <p class="show-description2"> Respect your flexibility, your adaptability, and—in most cases—your open-mindedness.</p>
+      <p class="show-description2"> Distrust your intentions, fearing you seek only power or wealth.</p>
+      <p class="show-description2"> Aren’t sure what to expect from you and are hesitant to assume your intentions.</p>
+      <%= render "shared/backbutton" %>
+      <%= render "shared/homebutton" %>
+  </div>
 
 <% end %>
