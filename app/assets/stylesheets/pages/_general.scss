@@ -104,3 +104,9 @@ div a {
   text-decoration: none;
   font-family: $body-font;
 }
+
+.buttons-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
