@@ -1,0 +1,43 @@
+.races-container {
+  width: 90%;
+  margin: 32px auto;
+  text-align: center;
+
+  p {
+    margin-bottom: 48px;
+  }
+}
+
+.race-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 27% 21%;
+  border: 1px solid $red;
+}
+
+.races-list {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px 8px;
+
+  a {
+    color: $red;
+  }
+}
+
+.race-selection-button {
+  color: $red;
+  font-size: 14px;
+  border: 1px solid $red;
+}
+
+.race-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
