@@ -1,23 +1,27 @@
 <h2>20%</h2>
 <progress max="100" value="20"></progress>
 
-<div>
-  <h1>My character</h1>
-  <%= simple_form_for [@room, @character] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :age %>
-    <%= f.input :height %>
-    <%= f.input :level %>
-    <%= f.input :weight %>
-    <%= f.input :gender %>
+<div class="new-character-container">
 
-    <%# <%= f.input :photo, as: :file %>
-    <%= f.submit "Create Character" %>
-  <% end %>
-</div>
 
-<div>
-  <ol>
-    <%= link_to "Back to the room", room_path(@room) %>
-  </ol>
+    <%= simple_form_for [@room, @character], html: { class: 'new-character-form' } do |f| %>
+      <h3>My character</h3>
+      <%= f.input :name, placeholder: "Name", label: false %>
+      <%= f.input :age, placeholder: "Age", label: false %>
+      <%= f.input :height, placeholder: "Height", label: false %>
+      <%= f.input :level, placeholder: "Level", label: false %>
+      <%= f.input :weight, placeholder: "Weight", label: false %>
+      <%= f.input :gender, placeholder: "Gender", label: false %>
+      <%= f.input :photo, as: :file, label: "+ Add a picture", input_html: {hidden: true} %>
+      <%= f.submit "Create Character", class: "new-character-form-button" %>
+    <% end %>
+
+  <div class="buttons-footer">
+    <div class="new-character-home-button">
+      <%= link_to room_path(@room) do %>
+      <i class="fa-brands fa-fort-awesome-alt"></i>
+      <% end %>
+    </div>
+  </div>
+
 </div>

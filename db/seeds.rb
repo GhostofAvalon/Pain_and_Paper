@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-
 require "json"
 require "open-uri"
 
@@ -58,6 +57,14 @@ ancestry["results"].first(30).each do |result|
   new_race.save
 end
 
+Race.all.each do |race|
+  break if race.name == "Kitsune"
+
+  puts race.name
+  race.image_url = "ancestry-#{race.name.downcase}-card.png"
+  race.save
+end
+
 # Parsing and Creating Skills with Pathfinder API
 url = "https://api.pathfinder2.fr/v1/pf2/action"
 action_serialized = URI.open(url, "Authorization" => ENV["PATHFINDER_KEY"]).read
@@ -95,6 +102,11 @@ job["results"].first(30).each do |result|
   new_job = Job.new(name: result['name'])
   new_job.description = "#{description}..."
   new_job.save
+end
+
+Job.all.each do |job|
+  job.image_url = "class-#{job.name.downcase}-card.png"
+  job.save
 end
 
 # Parsing and Creating Equipments with Pathfinder API

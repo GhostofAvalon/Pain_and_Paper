@@ -1,19 +1,39 @@
 <h2>30%</h2>
 <progress max="100" value="30"></progress>
 
-<h1>Races</h1>
-<p>Select your character race</p>
+<div class="races-container">
+  <h1>Races</h1>
+  <p>Select your character race</p>
 
-<ul>
-  <% @races.each do |race| %>
-    <li><strong><%= race.name %></strong></li>
-    <li><%= race.description %></li>
-    <%= link_to "View details", character_race_path(@character, race) %>
-    <div>
-      <%= simple_form_for [@character] do |f| %>
-        <%= f.hidden_field :race, value: race.id  %>
-        <%= f.submit "Select race" %>
+  <ul class="races-list">
+    <% @races.each do |race| %>
+      <% if race.image_url.present? %>
+        <div class="race-infos">
+          <li><%= image_tag("#{race.image_url}", class: "race-icon") %></li>
+          <%= link_to "#{race.name}", character_race_path(@character, race), html: { class: 'race-selection-button' } %>
+        </div>
       <% end %>
-    </div>
-  <% end %>
-</ul>
+    <% end %>
+  </ul>
+</div>
+
+<div class="buttons-footer">
+  <div class="new-character-home-button">
+    <%= link_to room_path(@character.room) do %>
+    <i class="fa-brands fa-fort-awesome-alt"></i>
+    <% end %>
+  </div>
+</div>
+
+<%# Bouton à rajouter à la card qui s'affiche quand on clique sur une icone de race %>
+
+<%#
+
+<div>
+  <%= simple_form_for [@character] do |f|
+    <%= f.hidden_field :race, value: race.id
+    <%= f.submit "Select race"
+  <% end
+</div>
+
+%>
