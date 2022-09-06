@@ -1,0 +1,45 @@
+.show-container {
+  background-image: asset-url(show-bg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  justify-items: center;
+}
+
+.show-title {
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  text-align: center;
+  color: $white;
+}
+
+.show-description {
+  font-size: 1.2em;
+  text-align: center;
+  color: $white70;
+  margin: 10px;
+}
+
+.show-container2 {
+  background-color: $brown-dark;
+  width: 96vw;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.5em $black;
+  margin-bottom: 30px;
+}
+
+
+.further {
+  text-align: justify;
+  background-color: $black70;
+  color: $white;
+  padding: 0.5em;
+}
+.show-description2 {
+  font-size: 1.2em;
+  color: $white70;
+  margin: 10px;
+}
