@@ -14,13 +14,12 @@
   <%@character.gifts.each do |gift| %>
         <li><strong><%= gift.name %></strong></li>
   <% end %>
-<h3>Spells :</h3><% @character.spells.each do |spell| %>
-        <li><strong><%= spell.name %></strong></li>
-  <% end %>
 <h3>Skills :</h3><% @character.skills.each do |skill| %>
         <li><strong><%= skill.name %></strong></li>
   <% end %>
-
+<h3>Spells :</h3><% @character.spells.each do |spell| %>
+        <li><strong><%= spell.name %></strong></li>
+  <% end %>
 
 
 <%= link_to "Edit Race", character_races_path(@character) %>
@@ -28,7 +27,7 @@
 <%= link_to "Edit Background", character_backgrounds_path(@character) %>
 <%= link_to "Edit Characteristics", edit_character_characteristics_list_path(@character) %>
 <%= link_to "Edit Gifts", character_gifts_path(@character) %>
-<%= link_to "Edit Spells", character_spells_path(@character) %>
 <%= link_to "Edit Skills", character_skills_path(@character) %>
+<%= link_to "Edit Spells", character_spells_path(@character) %>
 
 <%= link_to "Back", room_path(@room) %>
