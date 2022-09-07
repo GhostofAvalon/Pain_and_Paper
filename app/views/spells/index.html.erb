@@ -1,12 +1,17 @@
-<h2>90%</h2>
-<progress max="100" value="90"></progress>
+<div class="gifts-container">
 
-<h1>Spells</h1>
+  <div class="progress-bar">
+    <h3>90%</h3>
+    <progress max="100" value="90"></progress>
+  </div>
 
-<div data-controller="counter">
+  <h1>Spells</h1>
 
-  <p>Select <span data-counter-target="counter"><%= 5 - @character.spells.count %></span> more spells</p>
-  <%= render 'shared/spells_form' %>
-  <%= link_to "Finish", room_character_path(@room, @character) %>
+  <div data-controller="counter">
 
+    <p>Select <span data-counter-target="counter"><%= 5 - @character.spells.count %></span> more spells</p>
+    <%= render 'shared/spells_form' %>
+    <%= link_to "Finish", room_character_path(@room, @character), class: "new-character-form-button" %>
+
+  </div>
 </div>
