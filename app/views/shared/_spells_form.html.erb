@@ -2,10 +2,10 @@
 
 <% nums.each do |num| %>
   <% if @character.spells.count < (6-num)  %>
-    <div data-counter-target="form<%=num%>">
+    <div data-counter-target="form<%=num%>", class="spell-input">
       <%=simple_form_for ([@character, @spells, @character_spell]), data: { action: "counter#hide#{num} change->counter#display#{num}", target: "counter.form#{num}" },
                                                                   url: character_create_character_spell_index_path do |f| %>
-        <%= f.input :spell_id , collection: @spells %>
+        <%= f.input :spell_id , collection: @spells, label: false, input_html: { data: { target: "counter.giftInput" } } %>
         <%= f.submit "Select this spell"%>
       <% end %>
       <p data-counter-target="description<%=num%>" hidden="true"><%= Spell.all.sample.description %></p>

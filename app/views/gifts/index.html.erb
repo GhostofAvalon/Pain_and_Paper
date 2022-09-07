@@ -1,10 +1,16 @@
-<h2>70%</h2>
-<progress max="100" value="70"></progress>
+<div class="gifts-container">
 
-<h1>Gifts</h1>
+  <div class="progress-bar">
+    <h3>70%</h3>
+    <progress max="100" value="70"></progress>
+  </div>
 
-<div data-controller="counter">
-  <p>Select <span data-counter-target="counter"><%= 5 - @character.gifts.count %></span> more gifts</p>
-  <%= render 'shared/gifts_form' %>
-  <%= link_to "Finish", character_skills_path(@character) %>
+  <h1>Gifts</h1>
+
+  <div data-controller="counter">
+    <p>Select <span data-counter-target="counter"><%= 5 - @character.gifts.count %></span> more gifts</p>
+    <%= render 'shared/gifts_form' %>
+    <%= link_to "Finish", character_skills_path(@character), class: "new-character-form-button" %>
+  </div>
+
 </div>
