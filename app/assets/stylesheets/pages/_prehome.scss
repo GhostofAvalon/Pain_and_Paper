@@ -49,11 +49,11 @@
 }
 .first-image {
   position: absolute;
-  width: 500px;
-  height: 500px;
-  right: 115px;
-  top: 330px;
+  width: 300px;
+  right: 155px;
+  top: 254px;
 }
+
 .img-middle {
   width: 99%;
   border: 1px solid $black;
@@ -125,10 +125,12 @@
 }
 
 .text-gmorp2 {
-  color: $gold;
+  text-align: center;
+  margin-top: 66px;
+  margin-left: 164px;
+  padding-left: 56px;
+  color: #D4A76C;
   font-size: 20px;
-  padding-left: 69vw;
-  padding-top: 5vh;
   width: 50vw;
   font-weight: 300;
 }
