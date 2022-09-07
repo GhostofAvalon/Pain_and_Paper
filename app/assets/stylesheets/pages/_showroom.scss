@@ -84,7 +84,8 @@ background-color: rgba($red, 0.1)
 .show-room-links {
   align-items: stretch;
   display: flex;
-  justify-content: space-evenly
+  justify-content: center;
+
 }
 .show-room-link {
   background-color: $black;
@@ -95,6 +96,7 @@ background-color: rgba($red, 0.1)
   display: flex;
   align-items: center;
   font-size: 2em;
+  margin: 0 20px;
 }
 
 a .kill-icon {
