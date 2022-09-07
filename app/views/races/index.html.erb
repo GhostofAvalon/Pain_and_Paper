@@ -1,7 +1,8 @@
-<h2>30%</h2>
-<progress max="100" value="30"></progress>
-
 <div class="races-container">
+  <div class="progress-bar">
+    <h3>30%</h3>
+    <progress max="100" value="30"></progress>
+  </div>
   <h1>Races</h1>
   <p>Select your character race</p>
 
@@ -24,16 +25,3 @@
     <% end %>
   </div>
 </div>
-
-<%# Bouton à rajouter à la card qui s'affiche quand on clique sur une icone de race %>
-
-<%#
-
-<div>
-  <%= simple_form_for [@character] do |f|
-    <%= f.hidden_field :race, value: race.id
-    <%= f.submit "Select race"
-  <% end
-</div>
-
-%>

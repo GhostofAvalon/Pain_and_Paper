@@ -1,12 +1,43 @@
-progress[value] {
-  /* Reset the default appearance */
-  margin: 20px;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 250px;
-  height: 25px;
+.characteristics-form-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-h2 {
-  text-align: center;
+.characteristics-form {
+  background-color: $white90;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 64px;
+  border-radius: 12px;
+  margin: 32px 0px;
+
+  h3 {
+    margin-bottom: 32px;
+  }
+}
+
+.characteristics-form div input {
+  background-color: $white;
+  border: 1px solid $black;
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 8px;
+}
+
+.character_photo {
+  background-color: $white;
+  border: 1px solid $black;
+  border-radius: 12px;
+  padding: 4px;
+  width: 170px;
+}
+
+abbr {
+  display: none;
 }

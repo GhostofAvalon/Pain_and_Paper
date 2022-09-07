@@ -1,14 +1,18 @@
-.races-container {
+.jobs-container {
   width: 90%;
   margin: 32px auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   p {
     margin-bottom: 48px;
   }
 }
 
-.race-icon {
+.job-icon {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -17,25 +21,25 @@
   border: 1px solid $red;
 }
 
-.races-list {
+.jobs-list {
   padding: 0;
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 32px 8px;
+  grid-gap: 32px 64px;
 
   a {
     color: $red;
   }
 }
 
-.race-selection-button {
+.job-selection-button {
   color: $red;
   font-size: 14px;
   border: 1px solid $red;
 }
 
-.race-infos {
+.job-infos {
   display: flex;
   flex-direction: column;
   justify-content: center;

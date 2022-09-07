@@ -1,19 +1,23 @@
-<h2>60%</h2>
-<progress max="100" value="60"></progress>
+<div class="backgrounds-container">
+  <div class="progress-bar">
+    <h3>60%</h3>
+    <progress max="100" value="60"></progress>
+  </div>
+  <h1>Backgrounds</h1>
+  <p>Select your character background</p>
 
-<h1>Backgrounds</h1>
-<p>Select your character background</p>
-
-<ul>
-  <% @backgrounds.each do |background| %>
-    <li><strong><%= background.name %></strong></li>
-    <li><%= background.specificity %></li>
-    <%= link_to "View more", character_background_path(@character, background) %>
-    <div>
-      <%= simple_form_for [@character] do |f| %>
-        <%= f.hidden_field :background, value: background.id  %>
-        <%= f.submit "Select background" %>
-      <% end %>
-    </div>
-  <% end %>
-</ul>
+  <ul class="backgrounds-list">
+    <% @backgrounds.each do |background| %>
+      <div class="background-card">
+        <li class="background-name"><strong><%= background.name %></strong></li>
+        <li class="background-specificity"><%= background.specificity %><a href="#">Read more</a></li>
+        <div>
+          <%= simple_form_for [@character] do |f| %>
+            <%= f.hidden_field :background, value: background.id  %>
+            <%= f.submit "Select background", html: { class: 'background-selection-button' } %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+</div>

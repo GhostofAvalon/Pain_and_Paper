@@ -60,7 +60,6 @@ end
 Race.all.each do |race|
   break if race.name == "Kitsune"
 
-  puts race.name
   race.image_url = "ancestry-#{race.name.downcase}-card.png"
   race.save
 end
@@ -105,7 +104,9 @@ job["results"].first(30).each do |result|
 end
 
 Job.all.each do |job|
-  job.image_url = "class-#{job.name.downcase}-card.png"
+  break if job.name == "[Empty Class]"
+
+  job.image_url = "class-icon-#{job.name.downcase}.png"
   job.save
 end
 
