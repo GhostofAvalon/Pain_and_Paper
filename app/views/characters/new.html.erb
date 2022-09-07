@@ -1,8 +1,9 @@
-<h2>20%</h2>
-<progress max="100" value="20"></progress>
-
 <div class="new-character-container">
 
+  <div class="progress-bar">
+    <h3>20%</h3>
+    <progress max="100" value="20"></progress>
+  </div>
 
     <%= simple_form_for [@room, @character], html: { class: 'new-character-form' } do |f| %>
       <h3>My character</h3>

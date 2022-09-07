@@ -1,12 +1,15 @@
 progress[value] {
   /* Reset the default appearance */
-  margin: 20px;
   -webkit-appearance: none;
   appearance: none;
   width: 250px;
   height: 25px;
+  margin: 10px !important;
 }
 
-h2 {
-  text-align: center;
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
 }

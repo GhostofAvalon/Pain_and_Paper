@@ -2,6 +2,7 @@ class CharacteristicsListsController < ApplicationController
   def edit
     @character = Character.find(params[:character_id])
     @characteristics_list = @character.characteristics_list
+    @room = @character.room
   end
 
   def update

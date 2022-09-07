@@ -1,19 +1,27 @@
-<h2>40%</h2>
-<progress max="100" value="40"></progress>
+<div class="jobs-container">
+  <div class="progress-bar">
+    <h3>40%</h3>
+    <progress max="100" value="40"></progress>
+  </div>
+  <h1>Classes</h1>
+  <p>Select your character class</p>
 
-<h1>Classes</h1>
-<p>Select your character class</p>
-
-<ul>
-  <% @jobs.each do |job| %>
-    <li><strong><%= job.name %></strong></li>
-    <li><%= job.description %></li>
-    <%= link_to "View details", character_job_path(@character, job) %>
-    <div>
-      <%= simple_form_for [@character] do |f| %>
-        <%= f.hidden_field :job, value: job.id  %>
-        <%= f.submit "Select Class" %>
+  <ul class="jobs-list">
+    <% @jobs.each do |job| %>
+      <% if job.image_url.present? %>
+        <div class="job-infos">
+          <li><%= image_tag("#{job.image_url}", class: "job-icon") %></li>
+          <%= link_to "#{job.name}", character_job_path(@character, job), html: { class: 'job-selection-button' } %>
+        </div>
       <% end %>
-    </div>
-  <% end %>
-</ul>
+    <% end %>
+  </ul>
+</div>
+
+<div class="buttons-footer">
+  <div class="new-character-home-button">
+    <%= link_to room_path(@character.room) do %>
+    <i class="fa-brands fa-fort-awesome-alt"></i>
+    <% end %>
+  </div>
+</div>

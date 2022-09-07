@@ -1,20 +1,26 @@
-<h2>50%</h2>
-<progress max="100" value="50"></progress>
+<div class="characteristics-form-container">
+  <div class="progress-bar">
+    <h3>50%</h3>
+    <progress max="100" value="50"></progress>
+  </div>
 
-<div class="toothbrush-form-container">
-  <h1>Update <%= @character.name %> Characteristics</h1>
-  <br>
-  <br>
-    <div>
-      <%= simple_form_for [@character, @characteristics_list] do |f| %>
-        <%= f.input :force_value %>
-        <%= f.input :dexterity_value %>
-        <%= f.input :constitution_value %>
-        <%= f.input :intelligence_value %>
-        <%= f.input :wisdom_value %>
-        <%= f.input :charisma_value %>
-        <br>
-        <%= f.submit "Save characteristics" %>
+  <%= simple_form_for [@character, @characteristics_list], html: { class: 'characteristics-form' } do |f| %>
+    <h3>Update <%= @character.name %> Characteristics</h3>
+    <%= f.input :force_value %>
+    <%= f.input :dexterity_value %>
+    <%= f.input :constitution_value %>
+    <%= f.input :intelligence_value %>
+    <%= f.input :wisdom_value %>
+    <%= f.input :charisma_value %>
+    <br>
+    <%= f.submit "Save characteristics", class: "new-character-form-button" %>
+  <% end %>
+
+  <div class="buttons-footer">
+    <div class="new-character-home-button">
+      <%= link_to room_path(@room) do %>
+      <i class="fa-brands fa-fort-awesome-alt"></i>
       <% end %>
     </div>
+  </div>
 </div>
