@@ -1,0 +1,45 @@
+.show-class-container {
+  background-image: asset-url(show-bg2);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  justify-items: center;
+}
+
+.show-title-class {
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  text-align: center;
+  color: $white;
+  margin-top: -20vh;
+  text-shadow: 0 0 0.5em $black, 2px 0 $black, -2px 0 $black, 0 2px $black, 0 -2px $black,
+  1px 1px $black, -1px -1px $black, 1px -1px $black, -1px 1px $black;;
+}
+
+.show-container2-class {
+  background-color: $brown-dark;
+  width: 96vw;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.5em $black;
+  margin-bottom: 60px;
+  margin-top: -10vh;
+}
+
+.show-description2-class {
+  font-size: 1.2em;
+  color: $white70;
+  margin: 10px;
+  padding: 25px;
+  background-color: $black90;
+}
+
+.class-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: block;
+  margin-top: -50px;
+}

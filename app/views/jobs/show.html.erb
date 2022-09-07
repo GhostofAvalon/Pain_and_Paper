@@ -1,6 +1,28 @@
-<h1>Jobs#show</h1>
-<p>Find me in app/views/jobs/show.html.erb</p>
+<% if @job.name == "Barbarian" %>
+<article class="show-class-container">
+  <%= image_tag("class/class-barbarian-detail.png") %>
+  <h1 class="show-title-class">
+      BARBARIAN
+  </h1>
+  <div class="show-container2-class">
+  <%= image_tag("top-border.png") %>
+  <p class="show-description">
+      The barbarian is a fearsome embodiment of rage, focusing the deadly power of their anger against anyone who stands in their way. A barbarian is quick to enter battle and, once their fury has been unleashed, is immensely strong, often unpredictable, and nearly unstoppable.
+  </p>
+  <%= image_tag("bottom-border.png") %>
+  </div>
+  </article>
+  <div class="further">
+     <%= image_tag("class/class-icon-barbarian.png" , class: "class-icon") %>
+    <h2>PLAYING A BARBARIAN</h2>
+    <p class="show-description2-class">Rage consumes you in battle. You delight in wreaking havoc and using powerful weapons to carve through your enemies, relying on astonishing durability without needing complicated techniques or rigid training. Your rages draw upon a vicious instinct, which you might associate with an animal, a spirit, or some part of yourself. To many barbarians, brute force is a hammer and every problem looks like a nail, whereas others try to hold back the storm of emotions inside them and release their rage only when it matters most.</p>
 
+    <h3>You Might...</h3>
+      <p class="show-description2"> Have a deep-seated well of anger, hatred, or frustration.</p>
+      <p class="show-description2"> Prefer a straightforward approach to one requiring patience and tedium.</p>
+      <p class="show-description2"> Engage in a regimen of intense physical fitness—and punch anyone who says this conflicts with your distaste for patience and tedium.</p>
+
+<% end %>
   <div class="show-room-links">
     <%= render "shared/backbutton" %>
     <%= render "shared/homebutton" %>
