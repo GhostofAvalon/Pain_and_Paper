@@ -23,8 +23,15 @@
       <p class="show-description2"> Respect your flexibility, your adaptability, and—in most cases—your open-mindedness.</p>
       <p class="show-description2"> Distrust your intentions, fearing you seek only power or wealth.</p>
       <p class="show-description2"> Aren’t sure what to expect from you and are hesitant to assume your intentions.</p>
+    <div class="show-room-links">
       <%= render "shared/backbutton" %>
       <%= render "shared/homebutton" %>
+      <div class="show-room-link" >
+        <%= link_to  character_jobs_path(@character) do %>
+          <i class="fa-solid fa-check"></i>
+        <% end %>
+      </div>
+    </div>
   </div>
 <% end %>
 <% if @race.name == "Human" %>
