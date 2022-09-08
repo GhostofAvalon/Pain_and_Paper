@@ -1,5 +1,5 @@
 meta_product_name: "Pain&Paper"
 meta_title: "Pain&Paper - Make every game session easy with a simple character builder"
 meta_description: "Pain & Paper contains everything you need to begin your journey. Start creating your own fantasy hero to make your own amazing stories."
-meta_image: "logo-wax.png" # should exist in `app/assets/images/`
+meta_image: "logo-og-image.png" # should exist in `app/assets/images/`
 twitter_account: "@PainAndPaperApp"   # required for Twitter Cards
