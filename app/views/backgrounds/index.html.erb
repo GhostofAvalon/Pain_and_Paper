@@ -14,7 +14,7 @@
         <div>
           <%= simple_form_for [@character] do |f| %>
             <%= f.hidden_field :background, value: background.id  %>
-            <%= f.submit "Select background", html: { class: 'background-selection-button' } %>
+            <%= f.submit "Select background", html: { class: 'room-button' } %>
           <% end %>
         </div>
       </div>

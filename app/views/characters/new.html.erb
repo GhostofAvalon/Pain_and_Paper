@@ -1,28 +1,31 @@
-<div class="new-character-container">
+<div class="bg-character">
+  <div class="new-character-container">
 
-  <div class="progress-bar">
-    <h3>20%</h3>
-    <progress max="100" value="20"></progress>
-  </div>
+    <div class="progress-bar">
 
-    <%= simple_form_for [@room, @character], html: { class: 'new-character-form' } do |f| %>
-      <h3>My character</h3>
-      <%= f.input :name, placeholder: "Name", label: false %>
-      <%= f.input :age, placeholder: "Age", label: false %>
-      <%= f.input :height, placeholder: "Height", label: false %>
-      <%= f.input :level, placeholder: "Level", label: false %>
-      <%= f.input :weight, placeholder: "Weight", label: false %>
-      <%= f.input :gender, placeholder: "Gender", label: false %>
-      <%= f.input :photo, as: :file, label: "+ Add a picture", input_html: {hidden: true} %>
-      <%= f.submit "Create Character", class: "new-character-form-button" %>
-    <% end %>
+      <progress max="100" value="20"></progress>
 
-  <div class="buttons-footer">
-    <div class="new-character-home-button">
-      <%= link_to room_path(@room) do %>
-      <i class="fa-brands fa-fort-awesome-alt"></i>
-      <% end %>
     </div>
-  </div>
+      <h2>20%</h2>
+      <%= simple_form_for [@room, @character], html: { class: 'new-character-form' } do |f| %>
+        <h3>My character</h3>
+        <%= f.input :name, placeholder: "Name", label: false %>
+        <%= f.input :age, placeholder: "Age", label: false %>
+        <%= f.input :height, placeholder: "Height", label: false %>
+        <%= f.input :level, placeholder: "Level", label: false %>
+        <%= f.input :weight, placeholder: "Weight", label: false %>
+        <%= f.input :gender, placeholder: "Gender", label: false %>
+        <%= f.input :photo, as: :file, label: "+ Add a picture", input_html: {hidden: true}, style: "padding:5px; width:100%; height:100%;" %>
+        <%= f.submit "Create Character", class: "room-button" %>
+      <% end %>
 
+    <div class="buttons-footer">
+      <div class="new-character-home-button">
+        <%= link_to room_path(@room) do %>
+        <i class="fa-brands fa-fort-awesome-alt"></i>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
 </div>

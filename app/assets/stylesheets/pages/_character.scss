@@ -85,3 +85,11 @@ h3 {
     transform: rotate(360deg);
   }
 }
+
+.bg-character {
+  background-image: asset-url(bg-character);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 12px;
+}
