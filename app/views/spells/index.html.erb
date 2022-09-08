@@ -11,7 +11,7 @@
 
     <p>Select <span data-counter-target="counter"><%= 5 - @character.spells.count %></span> more spells</p>
     <%= render 'shared/spells_form' %>
-    <%= link_to "Finish", room_character_path(@room, @character), class: "new-character-form-button" %>
+    <%= link_to "Finish", room_character_path(@room, @character), class: "room-button" %>
 
   </div>
 </div>

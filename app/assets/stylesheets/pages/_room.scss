@@ -62,18 +62,16 @@ a .trash-icon {
 .room-input {
   width: 80%;
   text-align: center;
-  height: 40px;
   border-radius: 8px;
   padding: 0 10px;
   margin: 10px 0;
   font-size: 14px;
   font-family: $headers-font;
-  margin-bottom: 45px;
 }
 
 .room-button {
   padding: 4px 2px;
-  margin-top: 15px;
+  margin: 15px 0;
   border: 3px solid rgba(13, 13, 13, 0.6);
   background-image: url(/assets/bg-card-be77593….png);
   border-radius: 8px;
@@ -103,4 +101,16 @@ a .trash-icon {
   font-size: 1.3em;
   color: $white;
   margin: 15px;
+}
+
+.room-button2 {
+  padding: 4px 2px;
+  margin: 35px 0;
+  border: 3px solid rgba(13, 13, 13, 0.6);
+  background-image: url(/assets/bg-card-be77593….png);
+  border-radius: 8px;
+  color: #FAF5ED !important;
+  font-size: 18px;
+  font-family: "Gin", "Helvetica", "sans-serif";
+  background-color: #800008 !important;
 }

@@ -35,7 +35,10 @@
   border: 1px solid $black;
   border-radius: 12px;
   padding: 4px;
-  width: 170px;
+  width: 215px;
+  font-family: $body-font;
+  color: $white10;
+  padding-left: 20px;
 }
 
 abbr {
