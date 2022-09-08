@@ -29,7 +29,7 @@
     <% @room.characters.each do |character| %>
       <div>
         <% if character.photo.attached? %>
-          <%= cl_image_path character.photo.key %>
+          <%= cl_image_tag character.photo.key %>
         <% end %>
         <%= link_to character.name, room_character_path(@room, character) %>
         <%= link_to room_character_path(@room, character),
