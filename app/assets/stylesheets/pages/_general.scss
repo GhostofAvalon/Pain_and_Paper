@@ -110,3 +110,19 @@ div a {
   align-items: center;
   margin-bottom: 32px;
 }
+
+input {
+  background-color: $white90;
+  border: 3px solid $gold;
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 4px;
+  text-align: center;
+  width: 100%;
+}
+
+.input-container {
+  margin: 0, auto;
+  display: flex;
+  justify-content: center;
+}

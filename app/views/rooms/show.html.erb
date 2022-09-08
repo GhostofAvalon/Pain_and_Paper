@@ -27,20 +27,22 @@
 
   <% if @room.characters.count > 0 %>
     <% @room.characters.each do |character| %>
-      <div>
+      <div class="room-characters">
         <% if character.photo.attached? %>
           <%= cl_image_tag character.photo.key %>
         <% end %>
-        <%= link_to character.name, room_character_path(@room, character) %>
-        <%= link_to room_character_path(@room, character),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-          <i class="fa-solid fa-skull-crossbones kill-icon"></i>
+        <div>
+          <%= link_to character.name, room_character_path(@room, character) %>
+          <%= link_to room_character_path(@room, character),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa-solid fa-skull-crossbones kill-icon"></i>
+        </div>
         <% end %>
       </div>
     <% end %>
 
   <% else %>
-    <%= "No character in this room !" %>
+    <h3 class= "rooms-characters"><%= "No character in this room !" %></h3>
   <% end %>
 
   <div class="show-room-links">

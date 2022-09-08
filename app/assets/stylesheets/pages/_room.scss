@@ -78,7 +78,7 @@ a .trash-icon {
   background-image: url(/assets/bg-card-be77593….png);
   border-radius: 8px;
   color: #FAF5ED !important;
-  font-size: 14px;
+  font-size: 18px;
   font-family: "Gin", "Helvetica", "sans-serif";
   background-color: #800008 !important;
 }
@@ -88,4 +88,12 @@ a .trash-icon {
   color: $red;
   border-radius: 8px;
   padding: 10px;
+}
+
+.room-characters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
 }

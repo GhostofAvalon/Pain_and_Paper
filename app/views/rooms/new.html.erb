@@ -1,13 +1,13 @@
 <div>
-  <h1>My Room</h1>
+  <h1 style = "text-align:center; margin-top: 30vh">My Room</h1>
   <br>
   <br>
-    <div>
+    <div class="input-container">
       <%= simple_form_for(@room) do |f| %>
         <%= f.input :name, label: false, placeholder: "Your room name" %>
         <%= f.input :photo, as: :file, label: false %>
         <br>
-        <%= f.submit "Save room" %>
+        <%= f.submit "Save room" , class: "new-character-form-button", style: "margin-left: 25%"%>
       <% end %>
     </div>
 </div>
