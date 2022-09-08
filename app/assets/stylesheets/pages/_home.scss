@@ -105,3 +105,11 @@
   top: 0;
   clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%);
 }
+
+
+#bg-red {
+  background-color: $red;
+  background-image: asset-url('bg-texture');
+  background-blend-mode: multiply;
+  height: 100vh;
+}

@@ -110,3 +110,31 @@ div a {
   align-items: center;
   margin-bottom: 32px;
 }
+
+input {
+  background-color: $white90;
+  border: 3px solid $gold;
+  border-radius: 8px;
+  padding: 4px 2px;
+  margin-bottom: 4px;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+}
+
+.input-container {
+  margin: 0, auto;
+  display: flex;
+  justify-content: center;
+}
+
+ select {
+  font-family: $headers-font;
+  padding: 8px 2px ;
+  margin: 0 10px;
+}
+
+progress[value] {
+  border: 3px solid $gold;
+  // border-radius: 8px;
+}

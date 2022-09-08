@@ -10,7 +10,7 @@
   <div data-controller="counter">
     <p>Select <span data-counter-target="counter"><%= 5 - @character.gifts.count %></span> more gifts</p>
     <%= render 'shared/gifts_form' %>
-    <%= link_to "Finish", character_skills_path(@character), class: "new-character-form-button" %>
+    <%= link_to "Finish", character_skills_path(@character), class: "room-button" %>
   </div>
 
 </div>
