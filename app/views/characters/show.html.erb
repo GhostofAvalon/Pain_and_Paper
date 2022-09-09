@@ -18,7 +18,7 @@
     <div><h3>Name</h3><p><%= @character.name %></p></div>
     <div><h3>Age</h3><p><%= @character.age %> yo</p></div>
     <div><h3>Weight</h3><p><%= @character.weight %> kg</p></div>
-    <div><h3>Height</h3><p><%= @character.height %> m</p></div>
+    <div><h3>Height</h3><p><%= @character.height %> cm</p></div>
     <div><h3>Gender</h3><p><%= @character.gender %></p></div>
     <div><h3>Level</h3><p><%= @character.level %></p></div>
     <div class="character-infos-last"><h3>Creator</h3><p><%= @character.user[:username] %></p></div>
@@ -50,7 +50,7 @@
       <div>
         <%= image_tag("#{Job.find_by(name: "Barbarian").image_url}", class: "character-show-icon2") %>
         <h3>
-          <%= @character.job[:name] %>
+          <%= Job.find_by(name: "Barbarian").name %>
           <%= link_to character_jobs_path(@character) do %>
             <i class="fa-solid fa-pen"></i>
           <% end %>

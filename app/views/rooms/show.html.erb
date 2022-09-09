@@ -17,7 +17,7 @@
 </div>
 
 <div class="show-room-card">
-  <h3 class= "character-name">Game Master of the room : <br><%= @room.user.username %><br>
+  <h3 class= "character-name">Game Master of the room <br><%= @room.user.username %><br>
   <% if @room.user.photo.attached? %>
     <%= cl_image_path @room.user.photo.key , crop: :fill %> </h3>
   <% end %>
